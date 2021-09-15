@@ -3,11 +3,12 @@
  */
 import React, { Component } from 'react';
 
-import { StyleSheet, Text, TouchableHighlight } from 'react-native';
+import { View, StyleSheet, Text, TouchableHighlight } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 const styles = StyleSheet.create({
   button: {
-    color: '#FFF',
+    color: '#777',
     fontWeight: '400',
     fontSize: 17,
     fontFamily: 'Lalezar-Regular',
@@ -21,7 +22,14 @@ class NavButton extends Component {
       <TouchableHighlight
         onPress={() => props.handleClick()}
         underlayColor="transparent">
-        <Text style={styles.button}>{props.buttonText}</Text>
+        <View>
+          <Icon
+            name={this.props.iconCode}
+            type={this.props.iconType}
+            color="#777"
+          />
+          <Text style={styles.button}>{props.buttonText}</Text>
+        </View>
       </TouchableHighlight>
     );
   }

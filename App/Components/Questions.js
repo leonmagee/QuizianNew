@@ -57,7 +57,9 @@ export const Questions = props => (
           ),
         ]}
         key={i}
-        underlayColor={variables.brandThirdLite}
+        //underlayColor={variables.brandThirdLite}
+        //underlayColor={'black'}
+        underlayColor={'#FCFCFC'}
         disabled={props.answerSubmitted}
         onPress={() => props.answerChosen(answer.correct, i)}>
         <Text

@@ -18,6 +18,8 @@ import sports from '../SVG/sports';
 import geography from '../SVG/geography';
 
 const { width, height } = Dimensions.get('window');
+//height = 735;
+//console.log(height);
 
 class _CategoriesChoose extends Component {
   constructor(props) {
@@ -74,7 +76,7 @@ class _CategoriesChoose extends Component {
     }
     const itemWidth = width / numHorizontal;
     // const itemHeight = ( ( ( height_new) / num_vertical ) );
-    const itemHeight = height / numVertical;
+    const itemHeight = height / numVertical - 8;
 
     const { props } = this;
 
@@ -84,19 +86,19 @@ class _CategoriesChoose extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <TouchableHighlight
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
             underlayColor={'transparent'}
             onPress={() => {
@@ -117,25 +119,25 @@ class _CategoriesChoose extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <TouchableHighlight
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
             underlayColor={'transparent'}
             onPress={() => {
@@ -156,7 +158,7 @@ class _CategoriesChoose extends Component {
           <TouchableHighlight
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
             underlayColor={'transparent'}
             onPress={() => {
@@ -177,7 +179,7 @@ class _CategoriesChoose extends Component {
           <TouchableHighlight
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
             underlayColor={'transparent'}
             onPress={() => {
@@ -198,25 +200,25 @@ class _CategoriesChoose extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <TouchableHighlight
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
             underlayColor={'transparent'}
             onPress={() => {
@@ -237,13 +239,13 @@ class _CategoriesChoose extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: itemWidth, height: itemHeight },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
         </View>

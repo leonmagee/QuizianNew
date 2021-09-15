@@ -141,9 +141,9 @@ class _Categories extends Component {
     for (i = 0; i < total_grid_items; i++) {
       grid_array.push(i);
     }
-    const item_width = width / num_horizontal;
+    const itemWidth = width / num_horizontal;
     // const item_height = ( ( ( height_new) / num_vertical ) );
-    const item_height = height / num_vertical;
+    const itemHeight = height / num_vertical - 8;
 
     return (
       <LinearGradient colors={variables.gradient} style={{ flex: 1 }}>
@@ -151,19 +151,19 @@ class _Categories extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}>
             <SvgElement svg_data={sports} svg_scale={0.375} />
             <Text style={styles.categoriesText}>Sports</Text>
@@ -177,25 +177,25 @@ class _Categories extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}>
             <SvgElement svg_data={music} svg_scale={1.4} />
             <Text style={styles.categoriesText}>Music</Text>
@@ -209,7 +209,7 @@ class _Categories extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}>
             <SvgElement svg_data={television} svg_scale={0.15} />
             <Text style={styles.categoriesText}>TV & Movies</Text>
@@ -223,7 +223,7 @@ class _Categories extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}>
             <SvgElement svg_data={history} svg_scale={0.7} />
             <Text style={styles.categoriesText}>History</Text>
@@ -237,25 +237,25 @@ class _Categories extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}>
             <SvgElement svg_data={geography} svg_scale={0.122} />
             <Text style={styles.categoriesText}>Geography</Text>
@@ -269,13 +269,13 @@ class _Categories extends Component {
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
           <View
             style={[
               styles.categoriesBox,
-              { width: item_width, height: item_height },
+              { width: itemWidth, minHeight: itemHeight },
             ]}
           />
         </View>

@@ -65,9 +65,9 @@ const styles = StyleSheet.create({
     color: '#FFF',
     backgroundColor: 'transparent',
   },
-  menuBar: {
-    backgroundColor: 'rgba(0,0,0,0.1)',
-  },
+  // menuBar: {
+  //   backgroundColor: 'rgba(0,0,0,0.1)',
+  // },
 });
 
 class Credits extends Component {
@@ -113,19 +113,24 @@ class Credits extends Component {
       item_height,
       currentTimeout: null,
     };
-  }
-
-  UNSAFE_componentWillUnmount() {
-    clearTimeout(this.state.currentTimeout);
-  }
-
-  UNSAFE_componentWillMount() {
     this.animatedValue = [];
     this.animatedValueColor = [];
     this.state.grid_array.forEach(item => {
       this.animatedValue[item] = new Animated.Value(0);
     });
   }
+
+  // UNSAFE_componentWillUnmount() {
+  //   clearTimeout(this.state.currentTimeout);
+  // }
+
+  // UNSAFE_componentWillMount() {
+  //   this.animatedValue = [];
+  //   this.animatedValueColor = [];
+  //   this.state.grid_array.forEach(item => {
+  //     this.animatedValue[item] = new Animated.Value(0);
+  //   });
+  // }
 
   questionOpacityRecursive(array, length, i, old_i = null, shuffled) {
     if (i < length) {
@@ -224,23 +229,43 @@ class Credits extends Component {
             </View>
             {grid}
           </View>
-          <View style={[DefaultStyles.globalNavStyles, styles.menuBar]}>
+          <View style={DefaultStyles.globalNavStyles}>
             {/* add button for Home (this is no longer home) */}
             <StartQuizButton
-              handleClick={() => this.props.startQuiz()}
+              handleClick={() => {
+                clearTimeout(this.state.currentTimeout);
+                return this.props.startQuiz();
+              }}
               buttonText="NEW GAME"
+              iconCode="play-circle"
+              iconType="font-awesome-5"
             />
             <StartQuizButton
-              handleClick={() => this.props.goToStats()}
+              handleClick={() => {
+                clearTimeout(this.state.currentTimeout);
+                return this.props.goToStats();
+              }}
               buttonText="STATS"
+              iconCode="chart-bar"
+              iconType="font-awesome-5"
             />
             <StartQuizButton
-              handleClick={() => this.props.goToSettings()}
+              handleClick={() => {
+                clearTimeout(this.state.currentTimeout);
+                return this.props.goToSettings();
+              }}
               buttonText="SETTINGS"
+              iconCode="sliders-h"
+              iconType="font-awesome-5"
             />
             <StartQuizButton
-              handleClick={() => this.props.goToHome()}
+              handleClick={() => {
+                clearTimeout(this.state.currentTimeout);
+                return this.props.goToHome();
+              }}
               buttonText="HOME"
+              iconCode="home"
+              iconType="font-awesome-5"
             />
           </View>
         </View>

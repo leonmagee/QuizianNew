@@ -279,6 +279,10 @@ class Stats extends Component {
         <LinearAnimate
           colors={gradients[k]}
           style={[styles.barGradient, { width: this.state.barWidth[k] }]}
+          // style={[
+          //   styles.barGradient,
+          //   { transform: [{ scaleX: this.state.barWidth[k] }] },
+          // ]}
         />
       </View>
     ));

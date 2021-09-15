@@ -15,7 +15,7 @@ import DefaultStyles from '../Styles/DefaultStyles';
  */
 
 let { width, height } = Dimensions.get('window');
-height -= 50; // make space for bottom menu bar
+height -= 85; // make space for bottom menu bar
 
 const styles = StyleSheet.create({
   imageContainer: {
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
   homeTextWrap: {
     position: 'absolute',
-    zIndex: 333,
+    //zIndex: 333,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -52,17 +52,13 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 1, height: 1 },
     fontFamily: 'Lalezar-Regular',
   },
-  menuText: {
-    fontSize: 27,
-    fontFamily: 'Lalezar-Regular',
-    fontWeight: '400',
-    color: '#FFF',
-    backgroundColor: 'transparent',
-  },
   menuBar: {
     position: 'absolute',
-    backgroundColor: 'rgba(0,0,0,0.5)',
+    backgroundColor: '#FCFCFC',
     bottom: 0,
+    paddingTop: 17,
+    flex: 1,
+    height: 85,
     width,
   },
 });
@@ -112,18 +108,26 @@ class HomepageImage extends Component {
               <StartQuizButton
                 handleClick={() => props.startQuiz()}
                 buttonText="NEW  GAME"
+                iconCode="play-circle"
+                iconType="font-awesome-5"
               />
               <StartQuizButton
                 handleClick={() => props.goToStats()}
                 buttonText="STATS"
+                iconCode="chart-bar"
+                iconType="font-awesome-5"
               />
               <StartQuizButton
                 handleClick={() => props.goToCredits()}
                 buttonText="CREDITS"
+                iconCode="users"
+                iconType="font-awesome-5"
               />
               <StartQuizButton
                 handleClick={() => props.goToSettings()}
                 buttonText="SETTINGS"
+                iconCode="sliders-h"
+                iconType="font-awesome-5"
               />
             </View>
           </View>
