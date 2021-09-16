@@ -54,11 +54,17 @@ const styles = StyleSheet.create({
   },
   menuBar: {
     position: 'absolute',
-    backgroundColor: '#FCFCFC',
+    //backgroundColor: '#FCFCFC',
+    backgroundColor: '#222',
     bottom: 0,
-    paddingTop: 17,
-    flex: 1,
-    height: 85,
+    //paddingTop: 17,
+    //flex: 1,
+    paddingBottom: 13,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    height: 60,
+    borderTopColor: '#000',
+    borderTopWidth: 1,
     width,
   },
 });
@@ -108,26 +114,26 @@ class HomepageImage extends Component {
               <StartQuizButton
                 handleClick={() => props.startQuiz()}
                 buttonText="NEW  GAME"
-                iconCode="play-circle"
-                iconType="font-awesome-5"
+                iconCode="control-play"
+                iconType="simple-line-icon"
               />
               <StartQuizButton
                 handleClick={() => props.goToStats()}
                 buttonText="STATS"
-                iconCode="chart-bar"
-                iconType="font-awesome-5"
+                iconCode="pie-chart"
+                iconType="simple-line-icon"
               />
               <StartQuizButton
                 handleClick={() => props.goToCredits()}
                 buttonText="CREDITS"
-                iconCode="users"
-                iconType="font-awesome-5"
+                iconCode="people"
+                iconType="simple-line-icon"
               />
               <StartQuizButton
                 handleClick={() => props.goToSettings()}
                 buttonText="SETTINGS"
-                iconCode="sliders-h"
-                iconType="font-awesome-5"
+                iconCode="settings"
+                iconType="simple-line-icon"
               />
             </View>
           </View>

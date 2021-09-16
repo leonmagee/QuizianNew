@@ -25,11 +25,12 @@ class StartQuizButton extends Component {
         underlayColor="transparent">
         <View>
           <Icon
+            //raised
             name={this.props.iconCode}
             type={this.props.iconType}
-            color="#777"
+            color="#fff"
           />
-          <Text style={styles.button}>{this.props.buttonText}</Text>
+          {/* <Text style={styles.button}>{this.props.buttonText}</Text> */}
         </View>
       </TouchableHighlight>
     );
