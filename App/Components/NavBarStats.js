@@ -1,46 +1,38 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
-import NavButton from './NavButton';
-//import Variables from '../Styles/Variables';
-import DefaultStyles from '../Styles/DefaultStyles';
-
-// const styles = StyleSheet.create({
-//   menuBar: {
-//     backgroundColor: Variables.darkBackground,
-//   },
-// });
+import MenuBar_Wrap from './MenuBar_Wrap';
+import Button_BeginQuiz from './Button_BeginQuiz';
+import Button_HomePage from './Button_HomePage';
+import Button_Credits from './Button_Credits';
+import Button_Settings from './Button_Settings';
 
 class NavBarStats extends Component {
   render() {
     const { props } = this;
     return (
-      <View style={DefaultStyles.globalNavStyles}>
-        <NavButton
-          handleClick={() => props.startQuiz()}
-          buttonText="NEW GAME"
-          iconCode="play-circle"
-          iconType="font-awesome-5"
-        />
-        <NavButton
-          handleClick={() => props.goToSettings()}
-          buttonText="SETTINGS"
-          iconCode="sliders-h"
-          iconType="font-awesome-5"
-        />
-        <NavButton
-          handleClick={() => props.goToCredits()}
-          buttonText="CREDITS"
-          iconCode="users"
-          iconType="font-awesome-5"
-        />
-        <NavButton
-          handleClick={() => props.goToHome()}
-          buttonText="HOME"
-          iconCode="home"
-          iconType="font-awesome-5"
-        />
-      </View>
+      <MenuBar_Wrap>
+        <TouchableHighlight
+          underlayColor="transparent"
+          onPress={() => props.startQuiz()}>
+          <Button_BeginQuiz />
+        </TouchableHighlight>
+        <TouchableHighlight
+          underlayColor="transparent"
+          onPress={() => props.goToCredits()}>
+          <Button_Credits />
+        </TouchableHighlight>
+        <TouchableHighlight
+          underlayColor="transparent"
+          onPress={() => props.goToSettings()}>
+          <Button_Settings />
+        </TouchableHighlight>
+        <TouchableHighlight
+          underlayColor="transparent"
+          onPress={() => props.goToHome()}>
+          <Button_HomePage />
+        </TouchableHighlight>
+      </MenuBar_Wrap>
     );
   }
 }

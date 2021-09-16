@@ -235,17 +235,18 @@ const defaultStyles = StyleSheet.create({
     color: '#FFF',
     fontFamily: 'Lalezar',
   },
-  globalNavStyles: {
-    //height: 60,
-    //paddingTop: 10,
-    //paddingBottom: 15,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexDirection: 'row',
-    backgroundColor: '#FCFCFC',
-    paddingTop: 13,
-    height: 85,
-  },
+  // globalNavStyles: {
+  //   // deprecated ******
+  //   //height: 60,
+  //   //paddingTop: 10,
+  //   //paddingBottom: 15,
+  //   justifyContent: 'space-around',
+  //   alignItems: 'center',
+  //   flexDirection: 'row',
+  //   backgroundColor: '#FCFCFC',
+  //   paddingTop: 13,
+  //   height: 85,
+  // },
 });
 
 module.exports = defaultStyles;

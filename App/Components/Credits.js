@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
-import { StyleSheet, Text, View, Dimensions, Animated } from 'react-native';
-import StartQuizButton from './StartQuizButton';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Animated,
+  TouchableHighlight,
+} from 'react-native';
 import { shuffleArray } from '../Utils/helper';
 import variables from '../Styles/Variables';
-import DefaultStyles from '../Styles/DefaultStyles';
+import MenuBar_Wrap from './MenuBar_Wrap';
+import Button_BeginQuiz from './Button_BeginQuiz';
+import Button_HomePage from './Button_HomePage';
+import Button_Stats from './Button_Stats';
+import Button_Settings from './Button_Settings';
 
 let { width, height } = Dimensions.get('window');
 height -= 50; // make space for bottom menu bar
@@ -33,7 +43,6 @@ const styles = StyleSheet.create({
   homeText: {
     color: 'rgba(255,255,255,1)',
     fontSize: 30,
-    // fontWeight: 'bold',
     shadowColor: '#000',
     shadowOpacity: 0.2,
     shadowOffset: { width: 1, height: 1 },
@@ -65,9 +74,6 @@ const styles = StyleSheet.create({
     color: '#FFF',
     backgroundColor: 'transparent',
   },
-  // menuBar: {
-  //   backgroundColor: 'rgba(0,0,0,0.1)',
-  // },
 });
 
 class Credits extends Component {
@@ -229,45 +235,28 @@ class Credits extends Component {
             </View>
             {grid}
           </View>
-          <View style={DefaultStyles.globalNavStyles}>
-            {/* add button for Home (this is no longer home) */}
-            <StartQuizButton
-              handleClick={() => {
-                clearTimeout(this.state.currentTimeout);
-                return this.props.startQuiz();
-              }}
-              buttonText="NEW GAME"
-              iconCode="play-circle"
-              iconType="font-awesome-5"
-            />
-            <StartQuizButton
-              handleClick={() => {
-                clearTimeout(this.state.currentTimeout);
-                return this.props.goToStats();
-              }}
-              buttonText="STATS"
-              iconCode="chart-bar"
-              iconType="font-awesome-5"
-            />
-            <StartQuizButton
-              handleClick={() => {
-                clearTimeout(this.state.currentTimeout);
-                return this.props.goToSettings();
-              }}
-              buttonText="SETTINGS"
-              iconCode="sliders-h"
-              iconType="font-awesome-5"
-            />
-            <StartQuizButton
-              handleClick={() => {
-                clearTimeout(this.state.currentTimeout);
-                return this.props.goToHome();
-              }}
-              buttonText="HOME"
-              iconCode="home"
-              iconType="font-awesome-5"
-            />
-          </View>
+          <MenuBar_Wrap>
+            <TouchableHighlight
+              underlayColor="transparent"
+              onPress={() => this.props.startQuiz()}>
+              <Button_BeginQuiz />
+            </TouchableHighlight>
+            <TouchableHighlight
+              underlayColor="transparent"
+              onPress={() => this.props.goToStats()}>
+              <Button_Stats />
+            </TouchableHighlight>
+            <TouchableHighlight
+              underlayColor="transparent"
+              onPress={() => this.props.goToSettings()}>
+              <Button_Settings />
+            </TouchableHighlight>
+            <TouchableHighlight
+              underlayColor="transparent"
+              onPress={() => this.props.goToHome()}>
+              <Button_HomePage />
+            </TouchableHighlight>
+          </MenuBar_Wrap>
         </View>
       </LinearGradient>
     );

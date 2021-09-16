@@ -20,19 +20,15 @@ const styles = StyleSheet.create({
 class StartQuizButton extends Component {
   render() {
     return (
-      <TouchableHighlight
-        onPress={() => this.props.handleClick()}
-        underlayColor="transparent">
-        <View>
-          <Icon
-            //raised
-            name={this.props.iconCode}
-            type={this.props.iconType}
-            color="#fff"
-          />
-          {/* <Text style={styles.button}>{this.props.buttonText}</Text> */}
-        </View>
-      </TouchableHighlight>
+      <View>
+        <Icon
+          //raised
+          name={this.props.iconCode}
+          type={this.props.iconType}
+          color="#fff"
+        />
+        {/* <Text style={styles.button}>{this.props.buttonText}</Text> */}
+      </View>
     );
   }
 }

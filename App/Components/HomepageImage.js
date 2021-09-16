@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LinearGradient from 'react-native-linear-gradient';
-import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  TouchableHighlight,
+} from 'react-native';
 import { vw } from '../Utils/helper';
 import { QuizWrap } from './QuizWrap';
 import Stats from './Stats';
 import Credits from './Credits';
 import Settings from './Settings';
-import StartQuizButton from './StartQuizButton';
+import MenuBar_Wrap from './MenuBar_Wrap';
+import Button_BeginQuiz from './Button_BeginQuiz';
+import Button_Stats from './Button_Stats';
+import Button_Credits from './Button_Credits';
+import Button_Settings from './Button_Settings';
 import variables from '../Styles/Variables';
-import DefaultStyles from '../Styles/DefaultStyles';
 /**
  * @todo remove this
  */
@@ -42,6 +52,7 @@ const styles = StyleSheet.create({
     //zIndex: 333,
     alignItems: 'center',
     justifyContent: 'center',
+    elevation: 2,
   },
   homeText: {
     color: 'rgba(255,255,255,1)',
@@ -52,37 +63,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 1, height: 1 },
     fontFamily: 'Lalezar-Regular',
   },
-  menuBar: {
-    position: 'absolute',
-    //backgroundColor: '#FCFCFC',
-    backgroundColor: '#222',
-    bottom: 0,
-    //paddingTop: 17,
-    //flex: 1,
-    paddingBottom: 13,
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    height: 60,
-    borderTopColor: '#000',
-    borderTopWidth: 1,
-    width,
-  },
 });
 
 class HomepageImage extends Component {
-  // constructor(props) {
-  //   super(props);
-
-  //   this.state = {
-  //     started: false,
-  //   };
-  // }
-
   render() {
-    /**
-     * Insert Credits page here...
-     */
-
     let MainComponent = <View />;
 
     const { props } = this;
@@ -110,32 +94,28 @@ class HomepageImage extends Component {
             <View style={[styles.homeTextWrap, { width, height }]}>
               <Text style={styles.homeText}>Quizian</Text>
             </View>
-            <View style={[DefaultStyles.globalNavStyles, styles.menuBar]}>
-              <StartQuizButton
-                handleClick={() => props.startQuiz()}
-                buttonText="NEW  GAME"
-                iconCode="control-play"
-                iconType="simple-line-icon"
-              />
-              <StartQuizButton
-                handleClick={() => props.goToStats()}
-                buttonText="STATS"
-                iconCode="pie-chart"
-                iconType="simple-line-icon"
-              />
-              <StartQuizButton
-                handleClick={() => props.goToCredits()}
-                buttonText="CREDITS"
-                iconCode="people"
-                iconType="simple-line-icon"
-              />
-              <StartQuizButton
-                handleClick={() => props.goToSettings()}
-                buttonText="SETTINGS"
-                iconCode="settings"
-                iconType="simple-line-icon"
-              />
-            </View>
+            <MenuBar_Wrap>
+              <TouchableHighlight
+                underlayColor="transparent"
+                onPress={() => props.startQuiz()}>
+                <Button_BeginQuiz />
+              </TouchableHighlight>
+              <TouchableHighlight
+                underlayColor="transparent"
+                onPress={() => props.goToStats()}>
+                <Button_Stats />
+              </TouchableHighlight>
+              <TouchableHighlight
+                underlayColor="transparent"
+                onPress={() => props.goToCredits()}>
+                <Button_Credits />
+              </TouchableHighlight>
+              <TouchableHighlight
+                underlayColor="transparent"
+                onPress={() => props.goToSettings()}>
+                <Button_Settings />
+              </TouchableHighlight>
+            </MenuBar_Wrap>
           </View>
         </View>
       );
